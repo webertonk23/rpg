@@ -7,6 +7,7 @@ import characters.Character;
 import characters.Mage;
 import characters.Warrior;
 import enums.CharacterClass;
+import enums.WeaponType;
 import items.Equipment.Slot;
 import items.Potion.PotionType;
 import items.Armor;
@@ -16,7 +17,6 @@ import items.Weapon;
 
 public class GameManager {
     private Scanner scanner;
-    private Character player;
     private CombatManager combatManager;
 
     public GameManager(Scanner scanner) {
@@ -30,7 +30,6 @@ public class GameManager {
      * @param player O personagem principal do jogo.
      */
     public void startGame(Character player) throws Exception {
-        this.player = player;
         System.out.println("\n--- Jogo Iniciado com " + player.getName() + " ---");
         player.introduce();
         player.getInventory().displayInventory();
@@ -40,7 +39,7 @@ public class GameManager {
             System.out.println("\nEquipando itens iniciais para " + player.getName() + "...");
             Weapon basicSword = new Weapon(
                     "Espada Básica", "Uma espada de treinamento.", 10, 2, Slot.WEAPON,
-                    2, 0, 0, 0, 0, 0, 0, 0, 7);
+                    2, 0, 0, 0, 0, 0, 0, 0, 7, WeaponType.SWORD);
             player.getInventory().addItem(basicSword);
             player.getInventory().equipItem(basicSword);
         }

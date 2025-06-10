@@ -31,6 +31,7 @@ public abstract class Character implements Combatant, Serializable {
     protected int experienceToNextLevel;
 
     protected int totalDamageReduction;
+    protected int weaponSkillBonus;
 
     protected Inventory inventory;
 
@@ -57,6 +58,7 @@ public abstract class Character implements Combatant, Serializable {
         this.mana = this.maxMana;
 
         this.totalDamageReduction = 0;
+        this.weaponSkillBonus = 0;
 
         this.inventory = new Inventory(this);
     }
@@ -141,7 +143,7 @@ public abstract class Character implements Combatant, Serializable {
         int flatDefense = (int) (this.vitality * 0.3 + (double) this.level / 3);
         int baseFlatDefense = Math.max(0, incomingDamage - flatDefense);
 
-        int totalDefense = baseFlatDefense + this.totalDamageReduction; 
+        int totalDefense = baseFlatDefense + this.totalDamageReduction;
 
         return Math.max(1, totalDefense);
     }
@@ -262,6 +264,10 @@ public abstract class Character implements Combatant, Serializable {
         return totalDamageReduction;
     }
 
+    public int getWeaponSkillBonus() {
+        return weaponSkillBonus;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -308,5 +314,9 @@ public abstract class Character implements Combatant, Serializable {
 
     public void setTotalDamageReduction(int totalDamageReduction) {
         this.totalDamageReduction = totalDamageReduction;
+    }
+
+    public void setWeaponSkillBonus(int weaponSkillBonus) {
+        this.weaponSkillBonus = weaponSkillBonus;
     }
 }
