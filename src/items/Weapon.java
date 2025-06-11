@@ -7,9 +7,9 @@ public class Weapon extends Equipment {
     protected WeaponType type;
 
     public Weapon(String name, String description, int value, int weight,
-            Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
-            int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
-            int damageReduction, int attackDamage, WeaponType type) {
+                  Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
+                  int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
+                  int damageReduction, int attackDamage, WeaponType type) {
         super(name, description, value, weight,
                 slot, strengthBonus, dexterityBonus, intelligenceBonus,
                 vitalityBonus, wisdomBonus, charismaBonus, luckBonus,
@@ -31,5 +31,5 @@ public class Weapon extends Equipment {
         return type;
     }
 
-    
+
 }

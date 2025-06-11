@@ -2,7 +2,7 @@ package characters;
 
 import enums.CharacterClass;
 
-public class Archer extends Character{
+public class Archer extends Character {
     public Archer(String name) {
         super(name, CharacterClass.ARCHER);
     }
@@ -15,7 +15,7 @@ public class Archer extends Character{
     @Override
     public int calculateDamage() {
         int damage = (int) (dexterity + ((double) level * 1.5));
-        
+
         return (int) (damage + (double) level / 2);
     }
 }

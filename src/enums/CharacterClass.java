@@ -2,34 +2,34 @@ package enums;
 
 public enum CharacterClass {
     WARRIOR(
-        "Warrior",
-        30,
-        10,
-        10,
-        20,
-        10,
-        10,
-        10
+            "Warrior",
+            30,
+            10,
+            10,
+            20,
+            10,
+            10,
+            10
     ),
     MAGE(
-        "Mage",
-        10,
-        15,
-        30,
-        10,
-        15,
-        10,
-        10
+            "Mage",
+            10,
+            15,
+            30,
+            10,
+            15,
+            10,
+            10
     ),
     ARCHER(
-        "Archer",
-        10,
-        30,
-        10,
-        15,
-        10,
-        15,
-        10
+            "Archer",
+            10,
+            30,
+            10,
+            15,
+            10,
+            15,
+            10
     );
 
     private final String className;

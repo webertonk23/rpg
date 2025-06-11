@@ -1,12 +1,13 @@
-import java.util.Scanner;
-
 import characters.Character;
 import game.GameManager;
+
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         GameManager gameManager = new GameManager(scanner);
-        
+
         boolean running = true;
 
         while (running) {
@@ -32,7 +33,7 @@ public class App {
                         gameManager.startGame(player);
                     }
                     break;
-                case "3": 
+                case "3":
                     running = false;
                     System.out.println("Adeus");
                     break;

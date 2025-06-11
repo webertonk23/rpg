@@ -1,19 +1,19 @@
 package game;
 
-import java.util.Scanner;
-
 import characters.Archer;
 import characters.Character;
 import characters.Mage;
 import characters.Warrior;
 import enums.CharacterClass;
 import enums.WeaponType;
-import items.Equipment.Slot;
-import items.Potion.PotionType;
 import items.Armor;
+import items.Equipment.Slot;
 import items.Item;
 import items.Potion;
+import items.Potion.PotionType;
 import items.Weapon;
+
+import java.util.Scanner;
 
 public class GameManager {
     private Scanner scanner;
@@ -26,7 +26,7 @@ public class GameManager {
 
     /**
      * Inicia o loop principal do jogo (exploração, combate, etc.).
-     * 
+     *
      * @param player O personagem principal do jogo.
      */
     public void startGame(Character player) throws Exception {
@@ -45,16 +45,16 @@ public class GameManager {
         }
 
         if (player.getInventory().getEquippedGear().get(Slot.CHEST) == null) {
-             Armor basicArmor = new Armor(
-                "Armadura Leve", "Oferece proteção básica.", 15, 3, Slot.CHEST,
-                0, 0, 0, 1, 0, 0, 0, 3, 0
+            Armor basicArmor = new Armor(
+                    "Armadura Leve", "Oferece proteção básica.", 15, 3, Slot.CHEST,
+                    0, 0, 0, 1, 0, 0, 0, 3, 0
             );
             player.getInventory().addItem(basicArmor);
             player.getInventory().equipItem(basicArmor);
         }
 
-        if (player.getInventory().getItems().stream().noneMatch(item -> item instanceof Potion && ((Potion)item).getType() == PotionType.HEALING)) {
-             player.getInventory().addItem(new Potion("Poção de Cura Pequena", "Restaura um pouco de vida.", 15, 1, PotionType.HEALING, 20));
+        if (player.getInventory().getItems().stream().noneMatch(item -> item instanceof Potion && ((Potion) item).getType() == PotionType.HEALING)) {
+            player.getInventory().addItem(new Potion("Poção de Cura Pequena", "Restaura um pouco de vida.", 15, 1, PotionType.HEALING, 20));
         }
 
         player.getInventory().displayInventory();
@@ -93,18 +93,18 @@ public class GameManager {
                 case "4":
                     System.out.println("\n--- Poções no Inventário ---");
                     player.getInventory().getItems().stream()
-                        .filter(item -> item instanceof Potion && ((Potion)item).getType() == PotionType.HEALING)
-                        .map(item -> (Potion)item)
-                        .forEach(p -> System.out.println("- " + p.getName()));
+                            .filter(item -> item instanceof Potion && ((Potion) item).getType() == PotionType.HEALING)
+                            .map(item -> (Potion) item)
+                            .forEach(p -> System.out.println("- " + p.getName()));
 
                     System.out.print("Digite o nome da poção a usar (ou 'voltar'): ");
                     String potionName = scanner.nextLine();
                     if (!"voltar".equalsIgnoreCase(potionName)) {
                         Item itemToUse = player.getInventory().getItems().stream()
-                            .filter(item -> item.getName().equalsIgnoreCase(potionName) && item instanceof Potion)
-                            .findFirst()
-                            .orElse(null);
-                        
+                                .filter(item -> item.getName().equalsIgnoreCase(potionName) && item instanceof Potion)
+                                .findFirst()
+                                .orElse(null);
+
                         if (itemToUse != null) {
                             player.getInventory().useItem(itemToUse);
                         } else {
@@ -133,7 +133,7 @@ public class GameManager {
             }
 
 
-            if (!player.isAlive() && playing) { 
+            if (!player.isAlive() && playing) {
                 System.out.println("Seu personagem foi derrotado! Fim de jogo para este personagem.");
                 playing = false; // Sai do loop de jogo
             }

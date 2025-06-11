@@ -5,13 +5,8 @@ import interfaces.Usable;
 
 public class Potion extends Item implements Usable {
 
-    public enum PotionType {
-        HEALING, MANA, BUFF
-    }
-
     private PotionType type;
     private int amount;
-
     public Potion(String name, String description, int value, int weight, PotionType type, int amount) {
         super(name, description, value, weight);
         this.type = type;
@@ -45,5 +40,9 @@ public class Potion extends Item implements Usable {
                         + " de Força temporariamente.");
                 break;
         }
+    }
+
+    public enum PotionType {
+        HEALING, MANA, BUFF
     }
 }

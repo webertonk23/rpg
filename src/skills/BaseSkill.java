@@ -1,7 +1,7 @@
 package skills;
 
-import interfaces.Skill;
 import characters.Character;
+import interfaces.Skill;
 
 public abstract class BaseSkill implements Skill {
     private static final long serialVersionUID = 1L;

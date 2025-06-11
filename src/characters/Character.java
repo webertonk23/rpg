@@ -8,9 +8,8 @@ import java.io.Serializable;
 import java.util.Random;
 
 public abstract class Character implements Combatant, Serializable {
-    private static final long serialVersionUID = 1L;
     protected static final Random random = new Random();
-
+    private static final long serialVersionUID = 1L;
     protected String name;
     protected CharacterClass characterClass;
     protected int level;
@@ -208,44 +207,88 @@ public abstract class Character implements Combatant, Serializable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getHealth() {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public int getMana() {
         return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
     }
 
     public int getStrength() {
         return strength;
     }
 
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
     public int getDexterity() {
         return dexterity;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     public int getIntelligence() {
         return intelligence;
     }
 
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+
     public int getWisdom() {
         return wisdom;
+    }
+
+    public void setWisdom(int wisdom) {
+        this.wisdom = wisdom;
     }
 
     public int getVitality() {
         return vitality;
     }
 
+    public void setVitality(int vitality) {
+        this.vitality = vitality;
+    }
+
     public int getCharisma() {
         return charisma;
     }
 
+    public void setCharisma(int charisma) {
+        this.charisma = charisma;
+    }
+
     public int getLuck() {
         return luck;
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck;
     }
 
     public int getMaxHealth() {
@@ -264,56 +307,12 @@ public abstract class Character implements Combatant, Serializable {
         return totalDamageReduction;
     }
 
-    public int getWeaponSkillBonus() {
-        return weaponSkillBonus;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setMana(int mana) {
-        this.mana = mana;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setDexterity(int dexterity) {
-        this.dexterity = dexterity;
-    }
-
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public void setVitality(int vitality) {
-        this.vitality = vitality;
-    }
-
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
-
-    public void setCharisma(int charisma) {
-        this.charisma = charisma;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
     public void setTotalDamageReduction(int totalDamageReduction) {
         this.totalDamageReduction = totalDamageReduction;
+    }
+
+    public int getWeaponSkillBonus() {
+        return weaponSkillBonus;
     }
 
     public void setWeaponSkillBonus(int weaponSkillBonus) {

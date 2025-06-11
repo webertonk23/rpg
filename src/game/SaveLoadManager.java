@@ -1,12 +1,8 @@
 package game;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import characters.Character;
+
+import java.io.*;
 
 public class SaveLoadManager {
     private static String SAVE_DIR = "saves";
@@ -21,7 +17,7 @@ public class SaveLoadManager {
     /**
      * Salva um objeto Character em um arquivo.
      * O nome do arquivo será baseado no nome do personagem.
-     * 
+     *
      * @param player O objeto Character a ser salvo.
      * @return true se o salvamento foi bem-sucedido, false caso contrário.
      */
@@ -44,7 +40,7 @@ public class SaveLoadManager {
 
     /**
      * Carrega um objeto Character de um arquivo.
-     * 
+     *
      * @param playerName O nome do personagem a ser carregado (usado para encontrar
      *                   o arquivo).
      * @return O objeto Character carregado, ou null se o carregamento falhar.

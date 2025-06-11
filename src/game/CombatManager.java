@@ -1,10 +1,10 @@
 package game;
 
-import java.util.Scanner;
-
 import characters.Character;
 import items.Potion;
 import items.Potion.PotionType;
+
+import java.util.Scanner;
 
 public class CombatManager {
     private Scanner scanner;
@@ -15,7 +15,7 @@ public class CombatManager {
 
     /**
      * Gerencia um único combate entre o jogador e um inimigo.
-     * 
+     *
      * @param player O personagem do jogador.
      * @param enemy  O inimigo.
      * @return true se o jogador venceu, false se o jogador foi derrotado.

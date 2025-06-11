@@ -4,12 +4,7 @@ import characters.Character;
 import interfaces.Equippable;
 
 public abstract class Equipment extends Item implements Equippable {
-    public enum Slot {
-        WEAPON, HEAD, CHEST, RING, AMULET
-    }
-
     protected Slot slot;
-
     protected int strengthBonus;
     protected int dexterityBonus;
     protected int intelligenceBonus;
@@ -19,11 +14,10 @@ public abstract class Equipment extends Item implements Equippable {
     protected int luckBonus;
     protected int damageReduction;
     protected int attackDamage;
-
     public Equipment(String name, String description, int value, int weight,
-            Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
-            int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
-            int damageReduction, int attackDamage) {
+                     Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
+                     int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
+                     int damageReduction, int attackDamage) {
         super(name, description, value, weight);
         this.slot = slot;
         this.strengthBonus = strengthBonus;
@@ -98,5 +92,9 @@ public abstract class Equipment extends Item implements Equippable {
 
     public int getAttackDamage() {
         return attackDamage;
+    }
+
+    public enum Slot {
+        WEAPON, HEAD, CHEST, RING, AMULET
     }
 }

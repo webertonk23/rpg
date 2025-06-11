@@ -1,4 +1,5 @@
 package interfaces;
+
 import characters.Character;
 
 public interface Usable {

@@ -3,9 +3,9 @@ package items;
 public class Armor extends Equipment {
 
     public Armor(String name, String description, int value, int weight,
-            Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
-            int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
-            int damageReduction, int attackDamage) {
+                 Slot slot, int strengthBonus, int dexterityBonus, int intelligenceBonus,
+                 int vitalityBonus, int wisdomBonus, int charismaBonus, int luckBonus,
+                 int damageReduction, int attackDamage) {
 
         super(name, description, value, weight, slot, strengthBonus, dexterityBonus,
                 intelligenceBonus, vitalityBonus, wisdomBonus, charismaBonus, luckBonus,
